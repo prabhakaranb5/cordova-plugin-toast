@@ -1,0 +1,17 @@
+{
+  "name": "cordova-plugin-toast",
+  "version": "1.0.0",
+  "description": "A simple Cordova plugin to show toast messages",
+  "cordova": {
+    "id": "cordova-plugin-toast",
+    "platforms": ["android", "ios"]
+  },
+  "keywords": [
+    "cordova",
+    "toast",
+    "plugin",
+    "notification"
+  ],
+  "author": "Prabhakaran Baskaran",
+  "license": "MIT"
+}

@@ -1,0 +1,18 @@
+<plugin id="cordova-plugin-toast" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+  <name>Toast Plugin</name>
+  <description>Simple toast messages</description>
+  <license>MIT</license>
+  <keywords>cordova, toast</keywords>
+
+  <js-module src="www/toast.js" name="Toast">
+    <clobbers target="window.Toast" />
+  </js-module>
+
+  <platform name="android">
+    <source-file src="src/android/ToastPlugin.java" target-dir="src/com/example/toast" />
+  </platform>
+
+  <platform name="ios">
+    <source-file src="src/ios/ToastPlugin.m" />
+  </platform>
+</plugin>
