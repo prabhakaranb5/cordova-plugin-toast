@@ -4,14 +4,24 @@
   <description>Simple toast messages</description>
   <license>MIT</license>
   <keywords>cordova, toast</keywords>
+   <repo></repo>
+    <issue></issue>
+    <engines>
+        <engine name="cordova-plugman" version=">=4.2.0"/>
+    </engines>
 
-  <js-module src="www/toast.js" name="Toast">
-    <clobbers target="window.Toast" />
-  </js-module>
-
-  <platform name="android">
-    <source-file src="src/android/ToastPlugin.java" target-dir="src/com/example/toast" />
-  </platform>
+    <js-module src="www/toast.js" name="ToastPlugin">
+        <merges target="ToastPlugin" />
+    </js-module>
+    
+    <platform name="android">
+        <config-file target="config.xml" parent="/*">
+            <feature name="ToastPlugin" >
+                <param name="android-package" value="com.ferdinandsilva.android.ToastPlugin"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/ToastPlugin.java" target-dir="src/com/ferdinandsilva/android" />
+    </platform>
 
   <platform name="ios">
     <source-file src="src/ios/ToastPlugin.m" />
