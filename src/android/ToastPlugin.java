@@ -17,16 +17,16 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class SimpleToastPlugin extends CordovaPlugin {
-    public static final String TAG = "SimpleToastPlugin";
+public class ToastPlugin extends CordovaPlugin {
+    public static final String TAG = "ToastPlugin";
     public static Context thisContext;
 
-    public SimpleToastPlugin() {
+    public ToastPlugin() {
     }
 
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
-        SimpleToastPlugin.thisContext = cordova.getActivity().getApplicationContext();
+        ToastPlugin.thisContext = cordova.getActivity().getApplicationContext();
     }
     
 
@@ -40,7 +40,7 @@ public class SimpleToastPlugin extends CordovaPlugin {
             } else {
                 toastDuration = Toast.LENGTH_SHORT;
             }
-            Toast.makeText(SimpleToastPlugin.thisContext,args.get(0).toString(), toastDuration).show();
+            Toast.makeText(ToastPlugin.thisContext,args.get(0).toString(), toastDuration).show();
             callbackContext.success(args.get(0).toString());
         } else {
             return false;
