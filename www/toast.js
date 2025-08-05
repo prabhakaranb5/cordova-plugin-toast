@@ -2,10 +2,10 @@
 
 var exec = require("cordova/exec");
 
-var simpleToastPlugin = {
-	show: function(txt, duration, sc, ec) {
-		exec(sc, ec, "SimpleToastPlugin", "show", [txt, duration]);
+var ToastPlugin = {
+	show: function(message, duration, successCallback, errorCallback) {
+    		exec(successCallback, errorCallback, 'ToastPlugin', 'show', [message, duration]);
 	}
 };
 
-module.exports = SimpleToastPlugin;
+module.exports = ToastPlugin;
