@@ -1,29 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        id="cordova-plugin-simple-toast"
-        version="1.0.0">
-    <name>Simple Toast</name>
-    <description></description>
-    <license>Apache 2.0</license>
-    <keywords>cordova, toast</keywords>
-    <repo></repo>
-    <issue></issue>
-    <engines>
-        <engine name="cordova-plugman" version=">=4.2.0"/>
-    </engines>
+<plugin id="cordova-plugin-toast" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+  <name>Toast Plugin</name>
+  <description>Simple toast messages</description>
+  <license>MIT</license>
+  <keywords>cordova, toast</keywords>
 
-    <js-module src="www/toast.js" name="SimpleToastPlugin">
-        <merges target="simpleToastPlugin" />
-    </js-module>
-    
-    <platform name="android">
-        <config-file target="config.xml" parent="/*">
-            <feature name="SimpleToastPlugin" >
-                <param name="android-package" value="com.ferdinandsilva.android.SimpleToastPlugin"/>
-            </feature>
-        </config-file>
-        <source-file src="src/android/ToastPlugin.java" target-dir="src/com/ferdinandsilva/android" />
-    </platform>
+  <js-module src="www/toast.js" name="Toast">
+    <clobbers target="window.Toast" />
+  </js-module>
 
+  <platform name="android">
+    <source-file src="src/android/ToastPlugin.java" target-dir="src/com/example/toast" />
+  </platform>
+
+  <platform name="ios">
+    <source-file src="src/ios/ToastPlugin.m" />
+  </platform>
 </plugin>
